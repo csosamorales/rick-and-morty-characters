@@ -84,6 +84,7 @@ const Sidebar = () => {
             <TextField
               id="status-filter-select"
               select
+              size="small"
               label="Status"
               value={statusFilter}
               sx={{ width: "100%" }}
@@ -102,6 +103,7 @@ const Sidebar = () => {
           <TextField
             id="gender-filter-select"
             select
+            size="small"
             label="Gender"
             value={genderFilter}
             onChange={handleGenderSelectChange}

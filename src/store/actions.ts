@@ -1,4 +1,4 @@
-import { CharacterInfo } from "utils/types";
+import { CharacterType } from "utils/types";
 import {
   Actions,
   SET_MENU_SHOW,
@@ -29,7 +29,7 @@ export const setStatusFilter = (status: string): Actions => ({
   payload: status,
 });
 
-export const setCharacterInfo = (character: CharacterInfo): Actions => ({
+export const setCharacterInfo = (character: CharacterType): Actions => ({
   type: SET_CHARACTER_INFO,
   payload: character,
 });

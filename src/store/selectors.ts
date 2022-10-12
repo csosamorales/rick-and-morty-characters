@@ -1,9 +1,7 @@
 import { createSelector } from "reselect";
-import reducer, { AppState } from "./reducer";
+import { AppState } from "./reducer";
 
-export type RootState = ReturnType<typeof reducer>;
-
-const getReducer = (state: RootState) => state;
+const getReducer = (state: AppState) => state;
 
 export const showMenuSelector = createSelector(
   (state: AppState) => getReducer(state).showMenu,

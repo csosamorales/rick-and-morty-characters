@@ -1,8 +1,6 @@
 import React from "react";
 import Container from "@mui/material/Container";
-import NavBar from "components/navbar";
-import Main from "components/main";
-import ListCharacters from "components/list-characters";
+import Main from "components/Main";
 
 function App() {
   return (

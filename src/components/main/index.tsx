@@ -1,6 +1,6 @@
-import CharacterInfo from "components/character-info";
-import ListCharacters from "components/list-characters";
-import NavBar from "components/navbar";
+import CharacterInfo from "containers/CharacterDetail";
+import ListCharacters from "containers/ListCharacters";
+import NavBar from "components/NavBar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const Main = () => {

@@ -1,10 +1,10 @@
 import Box from "@mui/material/Box";
 import Pagination from "@mui/material/Pagination";
-import NoResults from "components/no-results";
-import ScrollableButton from "components/scrollable-button";
+import NoResults from "components/NoResults";
+import ScrollableButton from "components/ScrollableButton";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getCharacters } from "services/api-call";
+import { getCharacters } from "services/characters";
 import { setMenuShow, setPage } from "store/actions";
 import {
   genderFilterSelector,
@@ -13,14 +13,14 @@ import {
   showMenuSelector,
   statusFilterSelector,
 } from "store/selectors";
-import { CharacterInfo } from "utils/types";
-import CardCharacter from "./card";
-import Sidebar from "./sidebar";
+import { CharacterType } from "utils/types";
+import CardCharacter from "./CardCharacter/CardCharacter";
+import Sidebar from "./Sidebar";
 import "./styles.scss";
 
 const ListCharacters = () => {
   const dispatch = useDispatch();
-  const [characters, setCharacters] = useState<Array<CharacterInfo>>([]);
+  const [characters, setCharacters] = useState<Array<CharacterType>>([]);
   const [countPages, setCountPages] = useState(0);
   const showMenu: boolean = useSelector(showMenuSelector);
   const nameFilter: string = useSelector(nameCharacterFilterSelector);
@@ -45,7 +45,7 @@ const ListCharacters = () => {
               origin: character.origin.name,
               created: new Date(character.created).toLocaleDateString(),
               episodes: character.episode,
-            } as CharacterInfo;
+            } as CharacterType;
           })
         );
       })
@@ -57,7 +57,7 @@ const ListCharacters = () => {
     page: number
   ) => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-    const main = document
+    document
       .getElementById("main")
       ?.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     dispatch(setPage(page));
@@ -90,7 +90,7 @@ const ListCharacters = () => {
                 alignItems: "center",
               }}
             >
-              {characters.map((character: CharacterInfo) => (
+              {characters.map((character: CharacterType) => (
                 <CardCharacter key={character.id} character={character} />
               ))}
             </Box>
@@ -116,7 +116,6 @@ const ListCharacters = () => {
           backgroundColor: "#dddbdb",
         }}
       >
-        <ScrollableButton />
         <div className="footer__pagination">
           {characters.length > 0 && (
             <Pagination
@@ -124,10 +123,13 @@ const ListCharacters = () => {
               count={countPages}
               size={"small"}
               onChange={handlePageChange}
+              showFirstButton
+              showLastButton
             />
           )}
         </div>
       </div>
+      <ScrollableButton />
     </Box>
   );
 };

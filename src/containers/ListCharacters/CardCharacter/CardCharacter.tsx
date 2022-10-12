@@ -4,12 +4,12 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import { useHistory } from "react-router-dom";
-import { CharacterInfo } from "utils/types";
+import { CharacterType } from "utils/types";
 import { useDispatch } from "react-redux";
 import { setCharacterInfo } from "store/actions";
 
 interface Props {
-  character: CharacterInfo;
+  character: CharacterType;
 }
 
 const CardCharacter: React.FC<Props> = ({ character }) => {

@@ -8,7 +8,6 @@ const ScrollableButton = () => {
 
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
-    console.log("scrolled", scrolled);
     if (scrolled > 50) {
       setVisible(true);
     } else if (scrolled <= 50) {
@@ -18,7 +17,7 @@ const ScrollableButton = () => {
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-    const main = document
+    document
       .getElementById("main")
       ?.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };

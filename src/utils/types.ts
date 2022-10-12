@@ -1,4 +1,4 @@
-export type CharacterInfo = {
+export type CharacterType = {
   image: string;
   id: number;
   name: string;

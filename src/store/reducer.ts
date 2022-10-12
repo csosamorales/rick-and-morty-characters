@@ -1,4 +1,4 @@
-import { CharacterInfo } from "utils/types";
+import { CharacterType } from "utils/types";
 import {
   Actions,
   SET_MENU_SHOW,
@@ -14,7 +14,7 @@ export type AppState = {
   nameFilter: string;
   statusFilter: string;
   genderFilter: string;
-  characterDetail: CharacterInfo;
+  characterDetail: CharacterType;
   page: number;
 };
 

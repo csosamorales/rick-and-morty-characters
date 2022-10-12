@@ -1,4 +1,4 @@
-import { CharacterInfo } from "utils/types";
+import { CharacterType } from "utils/types";
 
 export const SET_MENU_SHOW = "set-menu-show";
 export const SET_NAME_CHARACTER_FILTER = "set-name-character-filter";
@@ -29,7 +29,7 @@ interface setGenderFilter {
 
 interface setCharacterInfo {
   type: typeof SET_CHARACTER_INFO;
-  payload: CharacterInfo;
+  payload: CharacterType;
 }
 
 interface setPage {
