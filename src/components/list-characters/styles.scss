@@ -1,0 +1,47 @@
+.main {
+  padding: 30px 15px;
+  font-size: 16px;
+  display: block;
+  overflow-y: scroll;
+}
+
+.footer__pagination {
+  margin-bottom: 20px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 375px) {
+  .footer__pagination {
+    // margin-left: 4em;
+  }
+}
+
+@media (min-width: 425px) {
+  .footer__pagination {
+    // margin-left: 5.5em;
+  }
+}
+
+@media (min-width: 600px) {
+  .footer__pagination {
+    // margin-left: 34%;
+  }
+}
+
+@media (min-width: 900px) {
+  .footer__pagination {
+    // margin-left: 45%;
+  }
+
+  .main {
+    // margin-left: 200px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    // margin-left: 300px;
+  }
+}

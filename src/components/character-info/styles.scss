@@ -1,0 +1,39 @@
+.tabs__container {
+  max-width: 250px;
+}
+
+@media (min-width: 425px) {
+  .tabs__container {
+    max-width: 350px;
+  }
+
+  .character__image {
+    height: 350px;
+  }
+}
+
+@media (min-width: 768px) {
+  .character__image {
+    height: 400px;
+    width: 400px;
+  }
+
+  .tabs__container {
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .character__image {
+    height: 450px;
+    width: 450px;
+  }
+
+  ul {
+    font-size: 18px;
+  }
+
+  .tabs__container {
+    max-width: unset;
+  }
+}
