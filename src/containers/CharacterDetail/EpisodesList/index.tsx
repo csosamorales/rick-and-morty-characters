@@ -13,7 +13,6 @@ const EpisodeList: React.FC<Props> = ({ episodesUrl }) => {
     parseInt(episodeUrl.split("/").slice(-1)[0])
   );
   const [episodeSelected, setEpisodeSelected] = useState(episodesId[0]);
-  console.log(episodesUrl[0]);
 
   const handleEpisodeChange = (
     event: React.SyntheticEvent,
