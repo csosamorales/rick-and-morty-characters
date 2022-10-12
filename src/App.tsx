@@ -1,6 +1,6 @@
 import React from "react";
 import Container from "@mui/material/Container";
-import Main from "components/Main";
+import Main from "./components/Main";
 
 function App() {
   return (
