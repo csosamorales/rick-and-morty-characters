@@ -18,7 +18,7 @@ const CardCharacter: React.FC<Props> = ({ character }) => {
   return (
     <Card
       sx={{
-        maxWidth: { xs: 345, md: 250 },
+        width: { xs: 250, md: 250 },
         marginBottom: 5,
         display: { md: "inline-block" },
         marginRight: { md: 5 },
@@ -27,18 +27,16 @@ const CardCharacter: React.FC<Props> = ({ character }) => {
       <CardActionArea>
         <CardMedia
           component="img"
-          height="250"
+          sx={{ width: { xs: "100%" } }}
           image={character.image}
           alt="avatar"
         />
         <CardContent sx={{ height: "150px" }}>
-          {/* <Typography variant="body2" color="text.secondary"> */}
           <ul style={{ paddingLeft: "15px" }}>
             <li>Name: {character.name}</li>
             <li>Specie: {character.specie}</li>
             <li>Status: {character.status}</li>
           </ul>
-          {/* </Typography> */}
         </CardContent>
       </CardActionArea>
       <CardActions

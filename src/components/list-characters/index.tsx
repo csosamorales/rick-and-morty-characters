@@ -1,9 +1,9 @@
 import Box from "@mui/material/Box";
 import Pagination from "@mui/material/Pagination";
 import NoResults from "components/no-results";
+import ScrollableButton from "components/scrollable-button";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import ScrollToTop from "react-scroll-to-top";
 import { getCharacters } from "services/api-call";
 import { setMenuShow, setPage } from "store/actions";
 import {
@@ -56,6 +56,10 @@ const ListCharacters = () => {
     event: React.ChangeEvent<unknown>,
     page: number
   ) => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    const main = document
+      .getElementById("main")
+      ?.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     dispatch(setPage(page));
   };
 
@@ -66,12 +70,14 @@ const ListCharacters = () => {
         display: { md: "flex" },
         flexDirection: { md: "row" },
         height: "100%",
+        overflow: { md: "hidden" },
       }}
     >
       <Sidebar />
       {characters.length > 0 ? (
         <div style={{ display: "flex", justifyContent: "center" }}>
           <div
+            id="main"
             className="main"
             onClick={() => {
               showMenu && dispatch(setMenuShow(false));
@@ -110,6 +116,7 @@ const ListCharacters = () => {
           backgroundColor: "#dddbdb",
         }}
       >
+        <ScrollableButton />
         <div className="footer__pagination">
           {characters.length > 0 && (
             <Pagination
@@ -121,7 +128,6 @@ const ListCharacters = () => {
           )}
         </div>
       </div>
-      <ScrollToTop smooth />
     </Box>
   );
 };

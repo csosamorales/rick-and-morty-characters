@@ -62,7 +62,9 @@ const CharacterInfo = () => {
   };
 
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
+    <div
+      style={{ display: "flex", justifyContent: "center", overflowY: "scroll" }}
+    >
       <Box sx={{ display: "flex", flexDirection: "column", padding: "20px" }}>
         <Box
           sx={{
