@@ -1,4 +1,5 @@
 ## Working app
 
-https://little-sea-9327.on.fleek.co/
+Frontend challenge for Fleek interview
 
+https://rick-and-morty.camisosa.xyz/
